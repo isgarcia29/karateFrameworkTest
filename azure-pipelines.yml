@@ -9,11 +9,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: UseJavaVersion@0
+- task: Maven@4
   inputs:
-    versionSpec: '11'
-    addToPath: true
-
-- script: 'mvn -v'
-  displayName: 'Check Maven Version'
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
