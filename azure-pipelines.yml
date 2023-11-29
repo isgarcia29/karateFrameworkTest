@@ -12,6 +12,7 @@ pool:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
+    goals: '-v'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
